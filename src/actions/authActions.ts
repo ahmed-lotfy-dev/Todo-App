@@ -5,7 +5,6 @@ import { signUpSchema, signInSchema } from "../lib/schemas/userSchema";
 import bcrypt from "bcrypt";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
-import { NextRequest, NextResponse } from "next/server";
 
 import { sessionOption, SessionData, defaultSession } from "../lib/session";
 import { getIronSession } from "iron-session";

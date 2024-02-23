@@ -6,6 +6,7 @@ export interface SessionData {
   email?: string;
   verified?: boolean;
   role?: string;
+  token?: string;
   isLoggedIn: boolean;
 }
 

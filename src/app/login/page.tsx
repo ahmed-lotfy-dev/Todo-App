@@ -2,7 +2,6 @@
 
 import { login } from "@/src/actions/authActions";
 import FormSubmit from "@/src/components/formSubmitBtn";
-import { Button } from "@/src/components/ui/button";
 import {
   Card,
   CardContent,
@@ -16,11 +15,12 @@ import { Label } from "@/src/components/ui/label";
 import Link from "next/link";
 import { useFormState } from "react-dom";
 import { toast } from "sonner";
+
 type Props = {};
 
 const Login = (props: Props) => {
   const [state, formAction] = useFormState(login, null);
-  // if (state?.success) toast(state.message);
+  if (state?.success) toast(state.message);
   console.log(state);
   return (
     <div>
@@ -38,17 +38,17 @@ const Login = (props: Props) => {
                 <div className="grid gap-2">
                   <Label htmlFor="email">Email</Label>
                   <Input id="email" type="email" name="email" placeholder="" />
-                  {/* <p className="text-red-400">
+                  <p className="text-red-400">
                     {state?.error?.email && state?.error?.email?._errors[0]}
-                  </p> */}
+                  </p>
                 </div>
                 <div className="grid gap-2">
                   <Label htmlFor="password">Password</Label>
                   <Input id="password" type="password" name="password" />
-                  {/* <p className="text-red-400">
+                  <p className="text-red-400">
                     {state?.error?.password &&
                       state?.error?.password?._errors[0]}
-                  </p> */}
+                  </p>
                 </div>
                 <FormSubmit btnText="Login" />
               </form>
