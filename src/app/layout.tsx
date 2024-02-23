@@ -1,11 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { cn } from "@/lib/utils";
-import { inter, roboto_mono } from "@/components/fonts";
+import { cn } from "@/src/lib/utils";
+import { inter, roboto_mono } from "@/src/components/ui/fonts";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "NextJS Template With Tailwind And Shadcn",
-  description: "Template Repo To Use To Initialize Any Project",
+  title: "Todo App",
+  description:
+    "Todo appication that can help you manage your time and projects to make you more productive and don't waste time",
 };
 
 export default function RootLayout({
@@ -23,6 +25,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Toaster/>
       </body>
     </html>
   );
